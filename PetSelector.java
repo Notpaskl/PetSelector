@@ -54,13 +54,16 @@ public class PetSelector {
         else if (season.equals("summer")){
             System.out.println("ponie");
         }
-        else if(consonant==true && color.equals("blue")&& season!=("fall") && season!=("summer"))
+        else if(consonant==true && color.equals("blue")&& season!=("fall") && season!=("summer")){
             System.out.println("axolotl");
-    } 
-    else {
+        }
+        else {
+            System.out.println("rock");
+        }
+           
+        
+    
+        } 
 
-     
-        System.out.println("rock");
-    }
     }
 
