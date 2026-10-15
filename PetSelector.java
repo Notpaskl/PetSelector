@@ -46,15 +46,21 @@ public class PetSelector {
             System.out.println("dog");
         }//If statement for porcupine if name  starts with vowel
         else if(color.equals("red")&& vowel==true){
-            System.out.println("pircupine");
+            System.out.println("porcupine");
         }//If statement for panda if name starts without vowel
         else if(color.equals("red") && vowel==false){
             System.out.println("panda");
         }
         else if (season.equals("summer")){
-            System.out.println("Ponie");
+            System.out.println("ponie");
         }
-        else if(consonant==true && color.equals("blue")&& season!=("fall")||season!=("winter"))
+        else if(consonant==true && color.equals("blue")&& season!=("fall") && season!=("summer"))
             System.out.println("axolotl");
     } 
-}
+    else {
+
+     
+        System.out.println("rock");
+    }
+    }
+
