@@ -16,8 +16,8 @@ public class PetSelector {
     String season4= ("Winter");
 
     //Consonants and vowels 
-    String vowel= ("aeiouAEIOU");
-    String consonants= ("bcdfghjklmnpqrstvwxyzBCFGHJKLMNPQRSTVWXYZ");
+    //String vowel= ("aeiouAEIOU");
+    //String consonants= ("bcdfghjklmnpqrstvwxyzBCFGHJKLMNPQRSTVWXYZ");
     //take input
     Scanner scanner = new Scanner(System.in);
         System.out.println("Please give me your favorite color"); 
@@ -26,6 +26,8 @@ public class PetSelector {
         String season=scanner.nextLine().toLowerCase();
         System.out.println("Please give me your name");
         String name=scanner.nextLine().toLowerCase();
+        boolean consonant = "aeiou".indexOf(name.substring(0,1 ))==-1;
+        boolean vowel = "aeiou".indexOf(name.substring(0, 1))>=0;
     //code to determine what animal they get
     //If statement for alligator
         if(color.equals("blue") && season.equals("fall")){
@@ -36,8 +38,23 @@ public class PetSelector {
             System.out.println("Ostrich");
         }
         //If statement for girrafe
-        else if(color.equals("green") && name.substring(0,1).contains(consonants) && season.equals("winter")){
+        else if(color.equals("green") && consonant==true && season.equals("winter")){
             System.out.println("Girrafe");
         }
+        //If statement for dog if you dont have a girrafe
+        else if(color.equals("green") && season!=("fall")){
+            System.out.println("dog");
+        }//If statement for porcupine if name  starts with vowel
+        else if(color.equals("red")&& vowel==true){
+            System.out.println("pircupine");
+        }//If statement for panda if name starts without vowel
+        else if(color.equals("red") && vowel==false){
+            System.out.println("panda");
+        }
+        else if (season.equals("summer")){
+            System.out.println("Ponie");
+        }
+        else if(consonant==true && color.equals("blue")&& season!=("fall")||season!=("winter"))
+            System.out.println("axolotl");
     } 
 }
