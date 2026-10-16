@@ -1,23 +1,11 @@
+//Pascal Somborn 10/15/26
+// This code is meant to choose a pet for a person based on their favorite color, season, and depending if the first letter of the given name starts with a vowel or a consonant
 //Import scanner class
 import java.util.Scanner;
 
 public class PetSelector {
     public static void main(String[] args) {
-    //Variables created
-    //Colors variables
-
-    String color1= ("Blue");
-    String color2= ("Green");
-    String color3= ("Red");
-    //Season variables
-    String season1= ("Spring");
-    String season2= ("Summer");
-    String season3= ("Fall");
-    String season4= ("Winter");
-
-    //Consonants and vowels 
-    //String vowel= ("aeiouAEIOU");
-    //String consonants= ("bcdfghjklmnpqrstvwxyzBCFGHJKLMNPQRSTVWXYZ");
+    
     //take input
     Scanner scanner = new Scanner(System.in);
         System.out.println("Please give me your favorite color"); 
@@ -26,6 +14,12 @@ public class PetSelector {
         String season=scanner.nextLine().toLowerCase();
         System.out.println("Please give me your name");
         String name=scanner.nextLine().toLowerCase();
+
+        //Idiot proof 
+        if (name.isEmpty()){
+            name = "Je suis Batman";
+        }
+        //Creates consonant and vowel
         boolean consonant = "aeiou".indexOf(name.substring(0,1 ))==-1;
         boolean vowel = "aeiou".indexOf(name.substring(0, 1))>=0;
     //code to determine what animal they get
@@ -38,25 +32,25 @@ public class PetSelector {
             System.out.println("Ostrich");
         }
         //If statement for girrafe
-        else if(color.equals("green") && consonant==true && season.equals("winter")){
+        else if(color.equals("green") && consonant && season.equals("winter")){
             System.out.println("Girrafe");
         }
         //If statement for dog if you dont have a girrafe
-        else if(color.equals("green") && season!=("fall")){
+        else if(color.equals("green") && !season.equals("fall")){
             System.out.println("dog");
         }//If statement for porcupine if name  starts with vowel
-        else if(color.equals("red")&& vowel==true){
+        else if(color.equals("red")&& vowel){
             System.out.println("porcupine");
         }//If statement for panda if name starts without vowel
-        else if(color.equals("red") && vowel==false){
+        else if(color.equals("red") && !vowel){
             System.out.println("panda");
-        }
+        } //If statement for a pony 
         else if (season.equals("summer")){
-            System.out.println("ponie");
-        }
-        else if(consonant==true && color.equals("blue")&& season!=("fall") && season!=("summer")){
+            System.out.println("pony");
+        } // If statement for an axolotl
+        else if(consonant && color.equals("blue")&& !season.equals("fall") && !season.equals("summer")){
             System.out.println("axolotl");
-        }
+        } //else statement for a glorious rock
         else {
             System.out.println("rock");
         }
