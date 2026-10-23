@@ -11,26 +11,29 @@ public class PetSelector {
         System.out.println("Please give me your favorite color"); 
         String color= scanner.nextLine().toLowerCase();
         //idiot proof color
-        if (!color.equals("blue") && !color.equals("green") && !color.equals("red"))
-            System.out.println("Please add a valid color");
+        if (!color.equals("blue") && !color.equals("green") && !color.equals("red")){
+
         
+            System.out.println("Please add a valid color");
+            return;
+        }
         System.out.println("What's your favorite season");
         String season=scanner.nextLine().toLowerCase();
         //idiot proof season
         if (!season.equals("spring") && !season.equals("summer") && !season.equals("fall") && !season.equals("winter")){
             System.out.println("Please add a valid seeason");
+            return;
             
         }
-            
-        
-
-
-
 
         System.out.println("Please give me your name");
         String name=scanner.nextLine().toLowerCase();
 
-        //Idiot proof 
+        //Idiot proof name
+         if ("abcdefghijklmnopqrstuvwxyz".indexOf(name.substring(0, 0 + 1).toLowerCase()) < 0) {
+            System.out.println("Enter a valid name");
+            return;
+         }
         
         //Creates consonant and vowel
         boolean consonant = "aeiou".indexOf(name.substring(0,1 ))==-1;
